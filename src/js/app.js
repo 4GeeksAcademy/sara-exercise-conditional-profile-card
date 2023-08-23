@@ -30,32 +30,28 @@ function render(variables = {}) {
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
   let socialMediaIcons = "";
-  if (
-    variables.twitter ||
-    variables.github ||
-    variables.linkedin ||
-    variables.instagram
-  ) {
+  const { twitter, github, linkedin, instagram } = variables;
+  if (twitter || github || linkedin || instagram) {
     socialMediaIcons = `
       <ul class=${variables.socialMediaPosition}>
         ${
-          variables.twitter
-            ? `<li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>`
+          twitter
+            ? `<li><a href="https://twitter.com/${twitter}"><i class="fab fa-twitter"></i></a></li>`
             : ""
         }
         ${
-          variables.github
-            ? `<li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>`
+          github
+            ? `<li><a href="https://github.com/${github}"><i class="fab fa-github"></i></a></li>`
             : ""
         }
         ${
-          variables.linkedin
-            ? `<li><a href="https://linkedin.com/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>`
+          linkedin
+            ? `<li><a href="https://linkedin.com/${linkedin}"><i class="fab fa-linkedin"></i></a></li>`
             : ""
         }
         ${
-          variables.instagram
-            ? `<li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>`
+          instagram
+            ? `<li><a href="https://instagram.com/${instagram}"><i class="fab fa-instagram"></i></a></li>`
             : ""
         }
       </ul>`;
